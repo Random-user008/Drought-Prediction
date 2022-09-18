@@ -71,7 +71,7 @@ h1
   font-size:40px;
 }
 hr.new5 {
-  border: 2px dashed #ff4b4b;
+  border: 1px #ff4b4b;
   border-radius: 60px;
 }
 
@@ -192,6 +192,7 @@ Each entry is a drought level at a specific point in time in a specific US count
   <li>This dataset utilizes the Harmonized World Soil Database by Fischer, G., F. Nachtergaele, S. Prieler, H.T. van Velthuizen, L. Verelst, D. Wiberg, 2008. Global Agro-ecological Zones Assessment for Agriculture (GAEZ 2008). IIASA, Laxenburg, Austria and FAO, Rome, Italy.
 </li>
 </ul></h3>
+<hr class="new5">
 
                     </div>
                     
