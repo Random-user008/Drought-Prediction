@@ -63,15 +63,15 @@ if selected == "Home":
       
                     """
                     <style>
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
 h1
 {
-  color:white;
+  color:#ff4b4b;
   font-size:40px;
 }
 hr.new5 {
-  border: 5px dashed red;
+  border: 2px dashed #ff4b4b;
   border-radius: 60px;
 }
 
@@ -80,13 +80,13 @@ hr.new5 {
     
                         <div >
                         
-                          <h1 style="font-family: 'Lobster Two', cursive;">Welcome to Prediction of Droughts using Weather & Soil Data</h1>
-                          <h3 style="color:white;font-family: 'Signika Negative', sans-serif;
+                          <h1 style="font-family: 'Montserrat';">Welcome to Prediction of Droughts using Weather & Soil Data</h1>
+                          <h3 style="color:white;font-family: 'Montserrat', sans-serif;
 ">The US drought monitor is a measure of drought across the US manually created by experts using a wide range of data.
                            This datasets' aim is to help investigate if droughts could be predicted using only meteorological data, potentially leading to generalization of US predictions to other areas of the world.</h3>
                            <hr class="new5">
-                           <h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Problem Statement</h2>
-                           <h3 style="color:white;font-family: 'Signika Negative', sans-serif;"><ul>
+                           <h2 style="font-family: 'Montserrat';color:white;font-size:30px;">Problem Statement</h2>
+                           <h3 style="color:white;font-family: 'Montserrat', sans-serif;"><ul>
   <li>Drought is among the most disastrous natural hazards and occurs in virtually all geographical areas. Several severe drought events have occurred in recent decades.</li>
   <li>It is a complicated phenomenon and is among the least understood natural hazards due to its multiple contributing factors operating at different temporal and spatial scales. </li>
   <li>Drought forecasting is an important part of early warning systems, as they provide lead-time to planners for threat responses, which helps minimize drought impact risk.</li>
@@ -94,8 +94,8 @@ hr.new5 {
 </li>
 </ul></h3>
 <hr class="new5">
-<h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Classification Categories</h2>
-<h3 style="color:white;font-family: 'Signika Negative', sans-serif;">This is a classification dataset over six levels of drought, which is no drought (None in the dataset), and five drought levels shown below.
+<h2 style="font-family: 'Montserrat';color:white;font-size:30px;">Classification Categories</h2>
+<h3 style="color:white;font-family: 'Montserrat', sans-serif;">This is a classification dataset over six levels of drought, which is no drought (None in the dataset), and five drought levels shown below.
 Each entry is a drought level at a specific point in time in a specific US county, accompanied by the last 90 days of 18 meteorological indicators shown in the bottom of this description.</h3>
 
                         <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2055480%2Ff5ad8544ab11d043972fb9209a874dd3%2Flevels.PNG?generation=1611148560535086&alt=media" width="500" height="600">
@@ -104,7 +104,7 @@ Each entry is a drought level at a specific point in time in a specific US count
 <hr class="new5">
 
                       <div>
-                       <h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Meteorological Indicators</h2>
+                       <h2 style="font-family: 'Montserrat';color:white;font-size:30px;">Meteorological Indicators</h2>
                       <table style="  border: 1px solid; background-color:white;>
                       <tr style="background-color:black;color:white;border: 1px solid;"> 
                         <th>Indicator</th>
@@ -184,8 +184,8 @@ Each entry is a drought level at a specific point in time in a specific US count
                       </tr>
                     </table>
                     <hr class="new5">
-<h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Acknowledgements</h2>
- <h3 style="color:white;font-family: 'Signika Negative', sans-serif;">This dataset would not exist without the open data offered by the NASA POWER Project and the authors of the US Drought Monitor.<ul>
+<h2 style="font-family: 'Montserrat';color:white;font-size:30px;">Acknowledgements</h2>
+ <h3 style="color:white;font-family: 'Montserrat', sans-serif;">This dataset would not exist without the open data offered by the NASA POWER Project and the authors of the US Drought Monitor.<ul>
   <li>These data were obtained from the NASA Langley Research Center (LaRC) POWER Project funded through the NASA Earth Science/Applied Science Program.</li>
   <li>The U.S. Drought Monitor is produced through a partnership between the National Drought Mitigation Center at the University of Nebraska-Lincoln, the United States Department of Agriculture, and the National Oceanic and Atmospheric Administration. </li>
   <li>Drought forecasting is an important part of early warning systems, as they provide lead-time to planners for threat responses, which helps minimize drought impact risk.</li>
@@ -202,8 +202,8 @@ Each entry is a drought level at a specific point in time in a specific US count
 if selected == "Predict":
     components.html("""
      <style>
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');</style>
-    <h1 style="color:white;font-family: 'Lobster Two', cursive;font-size:40px">Enter the details to predict drought</h1>    """,height=100,width=700)
+@import url('https://fonts.googleapis.com/css?family=Montserrat');</style>
+    <h1 style="color:white;font-family: 'Montserrat';font-size:40px">Enter the details to predict drought</h1>    """,height=100,width=700)
     with st.form(key = "form1"):
         WS10M_MIN = st.text_input(label = "Enter the Minimum Wind Speed at 10 Meters(WS10M_MIN) (m/s) ")
         QV2M = st.text_input(label = "Enter the Specific Humidity at 2 Meters(QV2M) (g/kg) ")
