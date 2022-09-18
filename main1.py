@@ -1,3 +1,4 @@
+from turtle import width
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
@@ -57,15 +58,53 @@ def streamlit_menu(example=1):
 selected = streamlit_menu(example=EXAMPLE_NO)
 
 if selected == "Home":
-    st.title(f"Welcome to Prediction of Droughts using Weather & Soil Data")
+    # st.title(f"Welcome to Prediction of Droughts using Weather & Soil Data")
     components.html(
+      
                     """
+                    <style>
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+h1
+{
+  color:white;
+  font-size:40px;
+}
+hr.new5 {
+  border: 5px dashed red;
+  border-radius: 60px;
+}
+
+</style>
+
     
-                        <div>
-                      
+                        <div >
+                        
+                          <h1 style="font-family: 'Lobster Two', cursive;">Welcome to Prediction of Droughts using Weather & Soil Data</h1>
+                          <h3 style="color:white;font-family: 'Signika Negative', sans-serif;
+">The US drought monitor is a measure of drought across the US manually created by experts using a wide range of data.
+                           This datasets' aim is to help investigate if droughts could be predicted using only meteorological data, potentially leading to generalization of US predictions to other areas of the world.</h3>
+                           <hr class="new5">
+                           <h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Problem Statement</h2>
+                           <h3 style="color:white;font-family: 'Signika Negative', sans-serif;"><ul>
+  <li>Drought is among the most disastrous natural hazards and occurs in virtually all geographical areas. Several severe drought events have occurred in recent decades.</li>
+  <li>It is a complicated phenomenon and is among the least understood natural hazards due to its multiple contributing factors operating at different temporal and spatial scales. </li>
+  <li>Drought forecasting is an important part of early warning systems, as they provide lead-time to planners for threat responses, which helps minimize drought impact risk.</li>
+  <li>In order to properly plan for water storage, locate alternative freshwater sources, apply innovative (water-saving) agricultural techniques, and import food and water, if needed, effective forecasting techniques can provide ample lead time.
+</li>
+</ul></h3>
+<hr class="new5">
+<h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Classification Categories</h2>
+<h3 style="color:white;font-family: 'Signika Negative', sans-serif;">This is a classification dataset over six levels of drought, which is no drought (None in the dataset), and five drought levels shown below.
+Each entry is a drought level at a specific point in time in a specific US county, accompanied by the last 90 days of 18 meteorological indicators shown in the bottom of this description.</h3>
+
                         <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2055480%2Ff5ad8544ab11d043972fb9209a874dd3%2Flevels.PNG?generation=1611148560535086&alt=media" width="500" height="600">
                         </div>
+                       
+<hr class="new5">
+
                       <div>
+                       <h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Meteorological Indicators</h2>
                       <table style="  border: 1px solid; background-color:white;>
                       <tr style="background-color:black;color:white;border: 1px solid;"> 
                         <th>Indicator</th>
@@ -144,13 +183,27 @@ if selected == "Home":
                         <td>Precipitation (mm day-1)</td>
                       </tr>
                     </table>
+                    <hr class="new5">
+<h2 style="font-family: 'Lobster Two', cursive;color:white;font-size:30px;">Acknowledgements</h2>
+ <h3 style="color:white;font-family: 'Signika Negative', sans-serif;">This dataset would not exist without the open data offered by the NASA POWER Project and the authors of the US Drought Monitor.<ul>
+  <li>These data were obtained from the NASA Langley Research Center (LaRC) POWER Project funded through the NASA Earth Science/Applied Science Program.</li>
+  <li>The U.S. Drought Monitor is produced through a partnership between the National Drought Mitigation Center at the University of Nebraska-Lincoln, the United States Department of Agriculture, and the National Oceanic and Atmospheric Administration. </li>
+  <li>Drought forecasting is an important part of early warning systems, as they provide lead-time to planners for threat responses, which helps minimize drought impact risk.</li>
+  <li>This dataset utilizes the Harmonized World Soil Database by Fischer, G., F. Nachtergaele, S. Prieler, H.T. van Velthuizen, L. Verelst, D. Wiberg, 2008. Global Agro-ecological Zones Assessment for Agriculture (GAEZ 2008). IIASA, Laxenburg, Austria and FAO, Rome, Italy.
+</li>
+</ul></h3>
+
                     </div>
+                    
                         """,
-                        height=1050,
-                      width=600,
+                        height=2600,
+                      width=700,
                       )
 if selected == "Predict":
-    st.title(f"Enter the details to predict drought")
+    components.html("""
+     <style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');</style>
+    <h1 style="color:white;font-family: 'Lobster Two', cursive;font-size:40px">Enter the details to predict drought</h1>    """,height=100,width=700)
     with st.form(key = "form1"):
         WS10M_MIN = st.text_input(label = "Enter the Minimum Wind Speed at 10 Meters(WS10M_MIN) (m/s) ")
         QV2M = st.text_input(label = "Enter the Specific Humidity at 2 Meters(QV2M) (g/kg) ")
@@ -192,7 +245,7 @@ if selected == "Predict":
           PRECTOT= float(PRECTOT)
           # st.write("WS10M_MIN: ",WS10M_MIN)
           # st.write(type(WS10M_MIN))
-          drought_df = pd.read_csv('C:/Users/BHARGAV/Downloads/us-drought-meteorological-data/validation_timeseries/validation_timeseries.csv')
+          drought_df = pd.read_csv('/Users/rishabhshyamsunder/Vois_Project_final/data/validation_timeseries.csv')
           # st.write(drought_df.head())
           drought_df = drought_df.dropna()
           drought_df['year'] = pd.DatetimeIndex(drought_df['date']).year
@@ -306,6 +359,35 @@ if selected == "Predict":
           RF_classifier.fit(independent_variables,target)
           y_pred_RF = RF_classifier.predict(arr)
           st.write("RF:",y_pred_RF)
+          if y_pred_RF==2:
+            st.write("Severe Drought")
+            st.write("Possible Impacts:")
+            st.write("* Crop or Pasture losses likely")
+            st.write("* Water shortages")
+            st.write("* Water restrictions imposed")
+          if y_pred_RF==0:
+            st.write("Abnormally Dry")
+            st.write("Possible Impacts:")
+            st.write("* Short-term dryness slowing planting,growth of crops or pastures")
+            st.write("Coming out of drought:")
+            st.write("* Some lingering water deflicts")
+            st.write("* Pastures or crops not fully recovered")
+          if y_pred_RF==1:
+            st.write("Moderate Drought")
+            st.write("Possible Impacts:")
+            st.write("* Some damage to crops,pastures")
+            st.write("* Streams,resercoirs,or wells low,some water shortage developind or imminent")
+            st.write("* Voluntary water-use restrictions requested")
+          if y_pred_RF==3:
+            st.write("Extreme Drought")
+            st.write("Possible Impacts:")
+            st.write("* Major crop/pasture losses")
+            st.write("* Widespread water shortages or restrictions")
+          if y_pred_RF==4:
+            st.write("Exceptional Drought")
+            st.write("Possible Impacts:")
+            st.write("* Exceptional and widespread crop/pasture losses")
+            st.write("* Shortages of water in reservoirs,streams,and wells creating water emergencies")
           # knn_classifier = KNeighborsClassifier(n_neighbors=5, p=2, metric='minkowski')
           # knn_classifier.fit(independent_variables, target)
           # y_pred_knn = knn_classifier.predict(arr)
