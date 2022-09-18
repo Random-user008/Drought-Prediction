@@ -203,7 +203,7 @@ if selected == "Predict":
     components.html("""
      <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat');</style>
-    <h1 style="color:white;font-family: 'Montserrat';font-size:40px">Enter the details to predict drought</h1>    """,height=100,width=700)
+    <h1 style="color:white;font-family: 'Montserrat';font-size:30px">Enter the details to predict drought</h1>    """,height=100,width=700)
     with st.form(key = "form1"):
         WS10M_MIN = st.text_input(label = "Enter the Minimum Wind Speed at 10 Meters(WS10M_MIN) (m/s) ")
         QV2M = st.text_input(label = "Enter the Specific Humidity at 2 Meters(QV2M) (g/kg) ")
