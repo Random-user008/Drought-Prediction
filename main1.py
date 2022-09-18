@@ -71,7 +71,7 @@ h1
   font-size:40px;
 }
 hr.new5 {
-  border: 1px #ff4b4b;
+  border: 1px solid #ff4b4b;
   border-radius: 60px;
 }
 
