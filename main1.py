@@ -245,7 +245,7 @@ if selected == "Predict":
           PRECTOT= float(PRECTOT)
           # st.write("WS10M_MIN: ",WS10M_MIN)
           # st.write(type(WS10M_MIN))
-          drought_df = pd.read_csv('/Users/rishabhshyamsunder/Vois_Project_final/data/validation_timeseries.csv')
+          drought_df = pd.read_csv('./validation_timeseries.csv')
           # st.write(drought_df.head())
           drought_df = drought_df.dropna()
           drought_df['year'] = pd.DatetimeIndex(drought_df['date']).year
