@@ -1,40 +1,40 @@
-from turtle import width
+# from turtle import width
 import streamlit as st
 from streamlit_option_menu import option_menu
 import streamlit.components.v1 as components
-import os
-import subprocess
+# import os
+# import subprocess
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
-import seaborn as sns
+# import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.feature_selection import RFE
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.feature_selection import RFE
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-from sklearn.decomposition import PCA, KernelPCA
-from sklearn.tree import DecisionTreeClassifier
-from sklearn import tree
-from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from sklearn.metrics import roc_auc_score
-from sklearn.metrics import cohen_kappa_score
-from sklearn import metrics
-from sklearn.model_selection import GridSearchCV
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import roc_curve, auc
-from sklearn.metrics import roc_auc_score
-import pickle
+# from sklearn.model_selection import RandomizedSearchCV
+# from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+# from sklearn.decomposition import PCA, KernelPCA
+# from sklearn.tree import DecisionTreeClassifier
+# from sklearn import tree
+# from sklearn.svm import SVC
+# from sklearn.neighbors import KNeighborsClassifier
+# from sklearn.pipeline import Pipeline
+# from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
+# from sklearn.metrics import accuracy_score
+# from sklearn.metrics import precision_score
+# from sklearn.metrics import recall_score
+# from sklearn.metrics import f1_score
+# from sklearn.metrics import roc_auc_score
+# from sklearn.metrics import cohen_kappa_score
+# from sklearn import metrics
+# from sklearn.model_selection import GridSearchCV
+# from sklearn.naive_bayes import GaussianNB
+# from sklearn.metrics import roc_curve, auc
+# from sklearn.metrics import roc_auc_score
+# import pickle
 
 
 EXAMPLE_NO = 1
@@ -360,12 +360,14 @@ if selected == "Predict":
           y_pred_RF = RF_classifier.predict(arr)
           st.write("RF:",y_pred_RF)
           if y_pred_RF==2:
+            st.write("Drought Level 2")
             st.write("Severe Drought")
             st.write("Possible Impacts:")
             st.write("* Crop or Pasture losses likely")
             st.write("* Water shortages")
             st.write("* Water restrictions imposed")
           if y_pred_RF==0:
+            st.write("Drought Level 0")
             st.write("Abnormally Dry")
             st.write("Possible Impacts:")
             st.write("* Short-term dryness slowing planting,growth of crops or pastures")
@@ -373,17 +375,20 @@ if selected == "Predict":
             st.write("* Some lingering water deflicts")
             st.write("* Pastures or crops not fully recovered")
           if y_pred_RF==1:
+            st.write("Drought Level 1")
             st.write("Moderate Drought")
             st.write("Possible Impacts:")
             st.write("* Some damage to crops,pastures")
             st.write("* Streams,resercoirs,or wells low,some water shortage developind or imminent")
             st.write("* Voluntary water-use restrictions requested")
           if y_pred_RF==3:
+            st.write("Drought Level 3")
             st.write("Extreme Drought")
             st.write("Possible Impacts:")
             st.write("* Major crop/pasture losses")
             st.write("* Widespread water shortages or restrictions")
           if y_pred_RF==4:
+            st.write("Drought Level 4")
             st.write("Exceptional Drought")
             st.write("Possible Impacts:")
             st.write("* Exceptional and widespread crop/pasture losses")
