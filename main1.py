@@ -74,7 +74,9 @@ hr.new5 {
   border: 1px groove #ff4b4b;
   border-radius: 60px;
 }
-
+div{
+  color : #1d1f2f;
+}
 </style>
 
     
@@ -205,7 +207,11 @@ Each entry is a drought level at a specific point in time in a specific US count
 if selected == "Predict":
     components.html("""
      <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat');</style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+div{
+  color : #1d1f2f;
+}
+</style>
     <h1 style="color:white;font-family: 'Montserrat';font-size:30px">Enter the details to predict drought</h1>    """,height=100,width=700)
     with st.form(key = "form1"):
         WS10M_MIN = st.text_input(label = "Enter the Minimum Wind Speed at 10 Meters(WS10M_MIN) (m/s) ")
