@@ -81,6 +81,8 @@ hr.new5 {
                         <div >
                         
                           <h1 style="font-family: 'Montserrat';">Welcome to Prediction of Droughts using Weather & Soil Data</h1>
+                          <img src="https://images.unsplash.com/photo-1549885606-bbc17accf949?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2864&q=80" width="700" height="600">
+
                           <h3 style="color:white;font-family: 'Montserrat', sans-serif;
 ">The US drought monitor is a measure of drought across the US manually created by experts using a wide range of data.
                            This datasets' aim is to help investigate if droughts could be predicted using only meteorological data, potentially leading to generalization of US predictions to other areas of the world.</h3>
@@ -197,7 +199,7 @@ Each entry is a drought level at a specific point in time in a specific US count
                     </div>
                     
                         """,
-                        height=2600,
+                        height=3300,
                       width=700,
                       )
 if selected == "Predict":
