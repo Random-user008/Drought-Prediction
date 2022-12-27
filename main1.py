@@ -110,7 +110,7 @@ Each entry is a drought level at a specific point in time in a specific US count
                       <div>
                        <h2 style="font-family: 'Montserrat';color:white;font-size:30px;">Meteorological Indicators</h2>
                       <table style="  border: 1px solid; background-color:black;>
-                      <tr style="background-color:black;color:white;border: 1px solid;"> 
+                      <tr style="background-color:white;color:black;border: 1px solid;"> 
                         <th>Indicator</th>
                         <th>Description</th>
                       </tr>
